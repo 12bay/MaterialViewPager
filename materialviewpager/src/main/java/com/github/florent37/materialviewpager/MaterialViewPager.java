@@ -7,9 +7,6 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +15,11 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.astuetz.PagerSlidingTabStrip;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ViewCompat;
+import androidx.viewpager.widget.ViewPager;
+
+import com.github.florent37.materialviewpager.PagerSlidingTabStrip;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.github.florent37.materialviewpager.header.MaterialViewPagerImageHelper;
 
@@ -365,12 +366,12 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
         //construct the materialViewPagerHeader with subviews
         if (!isInEditMode()) {
             materialViewPagerHeader = MaterialViewPagerHeader
-                .withToolbar(mToolbar)
-                .withToolbarLayoutBackground(toolbarLayoutBackground)
-                .withPagerSlidingTabStrip(pagerTitleStripContainer)
-                .withHeaderBackground(headerBackground)
-                .withStatusBackground(findViewById(R.id.statusBackground))
-                .withLogo(logoContainer);
+                    .withToolbar(mToolbar)
+                    .withToolbarLayoutBackground(toolbarLayoutBackground)
+                    .withPagerSlidingTabStrip(pagerTitleStripContainer)
+                    .withHeaderBackground(headerBackground)
+                    .withStatusBackground(findViewById(R.id.statusBackground))
+                    .withLogo(logoContainer);
 
             //and construct the MaterialViewPagerAnimator
             //attach it to the activity to enable MaterialViewPagerHeaderView.setMaterialHeight();
@@ -423,15 +424,15 @@ public class MaterialViewPager extends FrameLayout implements ViewPager.OnPageCh
     static class SavedState extends BaseSavedState {
         //required field that makes Parcelables from a Parcel
         public static final Parcelable.Creator<SavedState> CREATOR =
-            new Parcelable.Creator<SavedState>() {
-                public SavedState createFromParcel(Parcel in) {
-                    return new SavedState(in);
-                }
+                new Parcelable.Creator<SavedState>() {
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
 
-                public SavedState[] newArray(int size) {
-                    return new SavedState[size];
-                }
-            };
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
         public MaterialViewPagerSettings settings;
         public float yOffset;
 

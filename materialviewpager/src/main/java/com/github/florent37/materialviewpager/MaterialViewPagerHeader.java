@@ -1,12 +1,12 @@
 package com.github.florent37.materialviewpager;
 
 import android.content.Context;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-import android.support.v4.view.ViewCompat;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.ViewCompat;
 
 import static com.github.florent37.materialviewpager.Utils.dpToPx;
 
@@ -102,7 +102,7 @@ public class MaterialViewPagerHeader {
             @Override
             public boolean onPreDraw() {
                 //rotation fix, if not set, originalTitleY = Na
-                ViewCompat.setTranslationY(mLogo,0);
+                ViewCompat.setTranslationY(mLogo, 0);
                 ViewCompat.setTranslationX(mLogo, 0);
 
                 originalTitleY = ViewCompat.getY(mLogo);

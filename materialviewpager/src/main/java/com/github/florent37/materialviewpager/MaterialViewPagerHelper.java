@@ -2,8 +2,9 @@ package com.github.florent37.materialviewpager;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -56,7 +57,7 @@ public class MaterialViewPagerHelper {
      * Listen to ObservableScrollViewCallbacks so give to $[observableScrollViewCallbacks] your ObservableScrollViewCallbacks if you already use one
      * For loadmore or anything else
      *
-     * @param context    current context
+     * @param context     current context
      * @param mScrollView the scrollable
      */
     public static void registerScrollView(Context context, NestedScrollView mScrollView) {
